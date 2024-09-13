@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from kaggle.api.kaggle_api_extended import KaggleApi
-from config import EXTERNAL_DATA_DIR
+from src.config import EXTERNAL_DATA_DIR
 from loguru import logger
 from logs.log_config import configure_logging
 

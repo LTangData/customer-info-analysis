@@ -4,7 +4,7 @@ import mysql.connector
 import pandas as pd
 from mysql.connector import Error
 from pathlib import Path
-from config import EXTERNAL_DATA_DIR
+from src.config import EXTERNAL_DATA_DIR
 from loguru import logger
 from logs.log_config import configure_logging
 
