@@ -2,7 +2,7 @@ name: customer_information_analysis
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.12.5
   - black
   - flake8
   - isort
@@ -23,3 +23,4 @@ dependencies:
   - pip:
     - python-dotenv
     - mkdocs
+    - -e .
