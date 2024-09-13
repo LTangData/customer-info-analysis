@@ -7,6 +7,7 @@ from pathlib import Path
 from src.config import EXTERNAL_DATA_DIR
 from loguru import logger
 from logs.log_config import configure_logging
+from typing import Optional, List
 
 # Load environment variables from .env file
 load_dotenv()
@@ -67,12 +68,12 @@ class MySQLDatabaseManager:
 
 
 class CSVToMySQLLoader:
-    def __init__(self, db_manager: MySQLDatabaseManager, csv_files: list) -> None:
+    def __init__(self, db_manager: MySQLDatabaseManager, csv_files: List[str]) -> None:
         '''Initializes with a database manager and a list of CSV file paths.'''
         self.db_manager = db_manager
         self.csv_files = csv_files
     
-    def load_csv(self, file_path: str) -> pd.DataFrame | None:
+    def load_csv(self, file_path: str) -> Optional[pd.DataFrame]:
         '''Loads CSV file into a DataFrame.'''
         try:
             df = pd.read_csv(file_path)
@@ -103,7 +104,7 @@ class CSVToMySQLLoader:
         '''Generates a MySQL-compatible column definition from the DataFrame.'''
         return ', '.join([f'{col} VARCHAR(255)' for col in df.columns])
 
-def get_files(folder_path: str, file_extension: str = 'csv') -> list:
+def get_files(folder_path: str, file_extension: str = 'csv') -> List[str]:
     '''Retrieves all files with specified extension from specified folder.'''
     try:
         # Validate that the folder exists
