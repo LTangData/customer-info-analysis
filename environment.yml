@@ -1,0 +1,25 @@
+name: customer_information_analysis
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - black
+  - flake8
+  - isort
+  - pip
+  - typer
+  - loguru
+  - tqdm
+  - ipython
+  - jupyterlab
+  - matplotlib
+  - notebook
+  - numpy
+  - pandas
+  - scikit-learn
+  - sqlalchemy
+  - mysql-connector-python
+  - kaggle
+  - pip:
+    - python-dotenv
+    - mkdocs
