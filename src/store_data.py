@@ -4,13 +4,8 @@ import mysql.connector
 import pandas as pd
 from mysql.connector import Error
 from pathlib import Path
-from config import EXTERNAL_DATA_DIR, PROJ_ROOT
+from config import EXTERNAL_DATA_DIR
 from loguru import logger
-
-# Add the project root directory to the Python path
-import sys
-sys.path.append(str(PROJ_ROOT))
-
 from logs.log_config import configure_logging
 
 # Load environment variables from .env file

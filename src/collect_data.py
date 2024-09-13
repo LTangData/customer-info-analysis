@@ -1,13 +1,8 @@
 import os
 from dotenv import load_dotenv
 from kaggle.api.kaggle_api_extended import KaggleApi
-from config import EXTERNAL_DATA_DIR, PROJ_ROOT
+from config import EXTERNAL_DATA_DIR
 from loguru import logger
-
-# Add the project root directory to the Python path
-import sys
-sys.path.append(str(PROJ_ROOT))
-
 from logs.log_config import configure_logging
 
 # Load environment variables from .env file
